@@ -59,22 +59,59 @@ const Product = styled.div`
 `;
 
 const ProductDetail = styled.div`
-  flex: 2;
   display: flex;
 `;
 
 const Image = styled.img`
-  width: 200px;
+  width: 500px;
 `;
 
 const Details = styled.div`
-  padding: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+`;
+const Desc = styled.div`
+  padding-bottom: 100px;
+`;
+const SellerDetails = styled.div`
+  width: 100%;
+  padding: 20px;
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.6);
+`;
+const SellerTitle = styled.h1`
+  font-weight: 500;
+  margin-bottom: 10px;
+`;
+const About = styled.div``;
+const Contact = styled.div`
+  font-weight: 700;
+`;
+const Email = styled.div`
+  font-weight: 700;
+`;
+const Location = styled.div`
+  font-weight: 700;
 `;
 
-const ProductName = styled.span``;
+const Chat = styled.button`
+  margin-top: 10px;
+  width: 40%;
+  height: 40px;
+  background-color: teal;
+  color: white;
+  border: none;
+`;
+
+const ProductName = styled.div`
+  font-size: 24px;
+`;
+const ProductPrice = styled.div`
+  font-size: 24px;
+  padding-top: 10px;
+`;
 
 const ProductId = styled.span``;
 
@@ -86,32 +123,6 @@ const ProductColor = styled.div`
 `;
 
 const ProductSize = styled.span``;
-
-const PriceDetail = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const ProductAmountContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-`;
-
-const ProductAmount = styled.div`
-  font-size: 24px;
-  margin: 5px;
-  ${mobile({ margin: "5px 15px" })}
-`;
-
-const ProductPrice = styled.div`
-  font-size: 30px;
-  font-weight: 200;
-  ${mobile({ marginBottom: "20px" })}
-`;
 
 const Hr = styled.hr`
   background-color: #eee;
@@ -125,6 +136,9 @@ const Summary = styled.div`
   border-radius: 10px;
   padding: 20px;
   height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const SummaryTitle = styled.h1`
@@ -172,57 +186,39 @@ const Cart = () => {
               <ProductDetail>
                 <Image src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1614188818-TD1MTHU_SHOE_ANGLE_GLOBAL_MENS_TREE_DASHERS_THUNDER_b01b1013-cd8d-48e7-bed9-52db26515dc4.png?crop=1xw:1.00xh;center,top&resize=480%3A%2A" />
                 <Details>
-                  <ProductName>
-                    <b>Product:</b> JESSIE THUNDER SHOES
-                  </ProductName>
-                  <ProductId>
-                    <b>ID:</b> 93813718293
-                  </ProductId>
-                  <ProductColor color="black" />
-                  <ProductSize>
-                    <b>Size:</b> 37.5
-                  </ProductSize>
+                  <Desc>
+                    <ProductName>
+                      <b>Product:</b> JESSIE THUNDER SHOES
+                    </ProductName>
+                    <ProductPrice>
+                      <b>Price:</b> Rs.800
+                    </ProductPrice>
+                    {/* <ProductId>
+                      <b>ID:</b> 93813718293
+                    </ProductId>
+                    <ProductColor color="black" />
+                    <ProductSize>
+                      <b>Size:</b> 37.5
+                    </ProductSize> */}
+                  </Desc>
+
+                  <SellerDetails>
+                    <SellerTitle>Seller Details:</SellerTitle>
+                    <About>
+                      <Contact>Contact:</Contact>
+                      <Email>Email:</Email>
+                      <Location>Location:</Location>
+                    </About>
+                    <Chat>Chat with seller</Chat>
+                  </SellerDetails>
                 </Details>
               </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>2</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>$ 30</ProductPrice>
-              </PriceDetail>
             </Product>
             <Hr />
-            <Product>
-              <ProductDetail>
-                <Image src="https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png" />
-                <Details>
-                  <ProductName>
-                    <b>Product:</b> HAKURA T-SHIRT
-                  </ProductName>
-                  <ProductId>
-                    <b>ID:</b> 93813718293
-                  </ProductId>
-                  <ProductColor color="gray" />
-                  <ProductSize>
-                    <b>Size:</b> M
-                  </ProductSize>
-                </Details>
-              </ProductDetail>
-              <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>1</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
-                <ProductPrice>$ 20</ProductPrice>
-              </PriceDetail>
-            </Product>
           </Info>
           <Summary>
-            <SummaryTitle>ORDER SUMMARY</SummaryTitle>
-            <SummaryItem>
+            <SummaryTitle>Chat</SummaryTitle>
+            {/* <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
               <SummaryItemPrice>$ 80</SummaryItemPrice>
             </SummaryItem>
@@ -237,8 +233,8 @@ const Cart = () => {
             <SummaryItem type="total">
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>$ 80</SummaryItemPrice>
-            </SummaryItem>
-            <Button>CHECKOUT NOW</Button>
+            </SummaryItem> */}
+            <Button>Send message</Button>
           </Summary>
         </Bottom>
       </Wrapper>
