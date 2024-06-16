@@ -8,8 +8,9 @@ import Products from "../components/Products";
 const Home = () => {
   return (
     <div>
-      <Announcement />
       <Navbar />
+      <Announcement />
+
       <Slider />
       <Categories />
       <Products />

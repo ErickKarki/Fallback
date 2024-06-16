@@ -1,16 +1,18 @@
 import styled from "styled-components";
 import { mobile } from "../responsive";
-import bgImage from "../assets/background.jpg";
 import Navbar from "../components/Navbar";
+import bgImage from "../assets/background.jpg";
 
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
+
   background: linear-gradient(
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
     url(${bgImage}) center;
+
   background-size: cover;
   display: flex;
   align-items: center;
@@ -55,50 +57,49 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const Register = () => {
+const Select = styled.select`
+  min-width: 40%;
+  margin: 20px 10px 0px 0px;
+  padding: 10px;
+  ${mobile({ margin: "10px 0px" })}
+`;
+const Option = styled.option``;
+const Upload = () => {
   return (
     <>
       <Navbar />
       <Container>
         <Wrapper>
-          <Title>CREATE AN ACCOUNT</Title>
+          <Title>ADD YOUR PRODUCT</Title>
           <Form>
-            <Input type="text" placeholder="Enter Name" name="name" required />
             <Input
               type="text"
-              placeholder="Enter Last Name"
-              name="lastname"
+              placeholder="Name of your product"
+              name="name"
               required
             />
             <Input
               type="text"
-              placeholder="Enter Username"
-              name="uname"
+              placeholder="Price of your product"
+              name="category"
               required
             />
-            <Input
-              type="email"
-              placeholder="Enter Email"
-              name="email"
-              required
-            />
-            <Input
-              type="password"
-              placeholder="Enter Password"
-              name="psw"
-              required
-            />
-            <Input
-              type="password"
-              placeholder="Repeat Password"
-              name="psw-repeat"
-              required
-            />
+
+            <Input type="file" id="myFile" name="filename" />
+            <Select>
+              <Option disabled selected>
+                Select Category
+              </Option>
+              <Option>Kids</Option>
+              <Option>Women</Option>
+              <Option>Men</Option>
+            </Select>
+
             <Agreement>
               By creating an account, I consent to the processing of my personal
               data in accordance with the <b>PRIVACY POLICY</b>
             </Agreement>
-            <Button>CREATE</Button>
+            <Button>UPLOAD</Button>
           </Form>
         </Wrapper>
       </Container>
@@ -106,4 +107,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Upload;

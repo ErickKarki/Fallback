@@ -3,6 +3,7 @@ import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import React from "react";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   height: 60px;
@@ -62,11 +63,13 @@ const Right = styled.div`
 const MenuItem = styled.button`
   border: none;
   padding: 8px;
-  background-color: teal;
+  background-color: ${(props) => (props.upload === "upload" ? "none" : "teal")};
   font-size: 14px;
-  color: white;
+  color: ${(props) => (props.upload === "upload" ? "black" : "white")};
   cursor: pointer;
   margin-left: 25px;
+  font-size: ${(props) => (props.upload === "upload" ? "18px" : "14px")};
+
   ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `;
 
@@ -82,11 +85,20 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>Retro Revive</Logo>
+          <Link to="/">
+            <Logo>Retro Revive</Logo>
+          </Link>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
+          <Link to="/upload">
+            <MenuItem upload="upload">+ Post for free</MenuItem>
+          </Link>
+          <Link to="/register">
+            <MenuItem>REGISTER</MenuItem>
+          </Link>
+          <Link to="/login">
+            <MenuItem>SIGN IN</MenuItem>
+          </Link>
           {/* <MenuItem>
             <Badge badgeContent={4} color="primary">
               <ShoppingCartOutlined />

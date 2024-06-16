@@ -160,9 +160,21 @@ const SummaryItemPrice = styled.span``;
 const Button = styled.button`
   width: 100%;
   padding: 10px;
-  background-color: black;
+  background-color: teal;
   color: white;
   font-weight: 600;
+  border: none;
+  flex: 1;
+`;
+
+const ChatBox = styled.textarea``;
+const TypeAndSend = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+const TextBox = styled.textarea`
+  flex: 5;
+  margin-right: 5px;
 `;
 
 const Cart = () => {
@@ -174,24 +186,24 @@ const Cart = () => {
         <Title>YOUR BAG</Title>
         <Top>
           <TopButton>CONTINUE SHOPPING</TopButton>
-          <TopTexts>
+          {/* <TopTexts>
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist (0)</TopText>
-          </TopTexts>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
+          </TopTexts> */}
+          {/* <TopButton type="filled">CHECKOUT NOW</TopButton> */}
         </Top>
         <Bottom>
           <Info>
             <Product>
               <ProductDetail>
-                <Image src="https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1614188818-TD1MTHU_SHOE_ANGLE_GLOBAL_MENS_TREE_DASHERS_THUNDER_b01b1013-cd8d-48e7-bed9-52db26515dc4.png?crop=1xw:1.00xh;center,top&resize=480%3A%2A" />
+                <Image src="https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png" />
                 <Details>
                   <Desc>
                     <ProductName>
-                      <b>Product:</b> JESSIE THUNDER SHOES
+                      <b>Product:</b> Vintage T-Shirt
                     </ProductName>
                     <ProductPrice>
-                      <b>Price:</b> Rs.800
+                      <b>Price:</b> Rs.400
                     </ProductPrice>
                     {/* <ProductId>
                       <b>ID:</b> 93813718293
@@ -218,6 +230,7 @@ const Cart = () => {
           </Info>
           <Summary>
             <SummaryTitle>Chat</SummaryTitle>
+            <ChatBox></ChatBox>
             {/* <SummaryItem>
               <SummaryItemText>Subtotal</SummaryItemText>
               <SummaryItemPrice>$ 80</SummaryItemPrice>
@@ -234,7 +247,10 @@ const Cart = () => {
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>$ 80</SummaryItemPrice>
             </SummaryItem> */}
-            <Button>Send message</Button>
+            <TypeAndSend>
+              <TextBox>Write message...</TextBox>
+              <Button>Send</Button>
+            </TypeAndSend>
           </Summary>
         </Bottom>
       </Wrapper>
